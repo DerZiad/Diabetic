@@ -24,8 +24,10 @@ def launch(models: DeepLerner):
     windows.show()
     sys.exit(app.exec_())
 
-
 class Ui_Diabete(object):
+
+    def __init__(self, models: DeepLerner):
+        self.models = models
 
     def clickPredictXLSX(self):
         self.typeError2.setText("")
@@ -149,16 +151,13 @@ class Ui_Diabete(object):
                     self.predictionMachineLearning.setText("La personne est non diabétique")
                 else:
                     self.predictionMachineLearning.setText("La personne est diabétique")
-    def __init__(self, models: DeepLerner):
-        self.models = models
 
     def setupUi(self, Diabete):
         Diabete.setObjectName("Diabete")
-        Diabete.resize(1098, 867)
+        Diabete.resize(1089, 867)
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("images/logo.jpg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        icon.addPixmap(QtGui.QPixmap("../../Bureau/high-level-blood-sugar-vector-icon-diabetes-sign-81297690.jpg"),
-                       QtGui.QIcon.Normal, QtGui.QIcon.On)
+        icon.addPixmap(QtGui.QPixmap("./images/logo.jpg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap("../../Bureau/high-level-blood-sugar-vector-icon-diabetes-sign-81297690.jpg"), QtGui.QIcon.Normal, QtGui.QIcon.On)
         Diabete.setWindowIcon(icon)
         self.centralwidget = QtWidgets.QWidget(Diabete)
         self.centralwidget.setObjectName("centralwidget")
@@ -312,12 +311,11 @@ class Ui_Diabete(object):
         self.label.setText("")
         self.label.setObjectName("label")
         self.tabWidget = QtWidgets.QTabWidget(self.centralwidget)
-        self.tabWidget.setGeometry(QtCore.QRect(90, 80, 931, 651))
+        self.tabWidget.setGeometry(QtCore.QRect(80, 170, 951, 641))
         self.tabWidget.setStyleSheet("")
         self.tabWidget.setObjectName("tabWidget")
         self.tab = QtWidgets.QWidget()
-        self.tab.setStyleSheet(
-            "background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(0, 0, 0, 255), stop:0.33 rgba(0, 0, 0, 255), stop:0.34 rgba(255, 30, 30, 255), stop:0.66 rgba(255, 0, 0, 255), stop:0.67 rgba(255, 255, 0, 255), stop:1 rgba(255, 255, 0, 255));")
+        self.tab.setStyleSheet("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(0, 0, 0, 255), stop:0.33 rgba(0, 0, 0, 255), stop:0.34 rgba(255, 30, 30, 255), stop:0.66 rgba(255, 0, 0, 255), stop:0.67 rgba(255, 255, 0, 255), stop:1 rgba(255, 255, 0, 255));")
         self.tab.setObjectName("tab")
         self.pregnanciesEdit = QtWidgets.QLineEdit(self.tab)
         self.pregnanciesEdit.setGeometry(QtCore.QRect(180, 60, 211, 41))
@@ -423,7 +421,6 @@ class Ui_Diabete(object):
         self.deepLearningCheckbox.setObjectName("deepLearningCheckbox")
         self.pushButton = QtWidgets.QPushButton(self.tab)
         self.pushButton.setGeometry(QtCore.QRect(340, 440, 311, 81))
-        self.pushButton.clicked.connect(self.clicked)
         font = QtGui.QFont()
         font.setFamily("Calibri")
         font.setPointSize(26)
@@ -432,10 +429,11 @@ class Ui_Diabete(object):
         font.setWeight(75)
         self.pushButton.setFont(font)
         self.pushButton.setStyleSheet("background-color: rgb(0, 255, 127);\n"
-                                      "")
+"")
         self.pushButton.setObjectName("pushButton")
+        self.pushButton.clicked.connect(self.clicked)
         self.predictionMachineLearning = QtWidgets.QLabel(self.tab)
-        self.predictionMachineLearning.setGeometry(QtCore.QRect(340, 540, 301, 31))
+        self.predictionMachineLearning.setGeometry(QtCore.QRect(340, 530, 301, 31))
         font = QtGui.QFont()
         font.setFamily("Calibri")
         font.setPointSize(14)
@@ -447,7 +445,7 @@ class Ui_Diabete(object):
         self.predictionMachineLearning.setText("")
         self.predictionMachineLearning.setObjectName("predictionMachineLearning")
         self.predictionDeepLearning = QtWidgets.QLabel(self.tab)
-        self.predictionDeepLearning.setGeometry(QtCore.QRect(340, 580, 301, 31))
+        self.predictionDeepLearning.setGeometry(QtCore.QRect(340, 570, 301, 31))
         font = QtGui.QFont()
         font.setFamily("Calibri")
         font.setPointSize(14)
@@ -546,7 +544,7 @@ class Ui_Diabete(object):
         font.setWeight(75)
         self.pregnanciesError.setFont(font)
         self.pregnanciesError.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-                                            "color: rgb(255, 0, 0);")
+"color: rgb(255, 0, 0);")
         self.pregnanciesError.setText("")
         self.pregnanciesError.setObjectName("pregnanciesError")
         self.glucoseError = QtWidgets.QLabel(self.tab)
@@ -558,7 +556,7 @@ class Ui_Diabete(object):
         font.setWeight(75)
         self.glucoseError.setFont(font)
         self.glucoseError.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-                                        "color: rgb(255, 0, 0);")
+"color: rgb(255, 0, 0);")
         self.glucoseError.setText("")
         self.glucoseError.setObjectName("glucoseError")
         self.bloodPresureError = QtWidgets.QLabel(self.tab)
@@ -570,7 +568,7 @@ class Ui_Diabete(object):
         font.setWeight(75)
         self.bloodPresureError.setFont(font)
         self.bloodPresureError.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-                                             "color: rgb(255, 0, 0);")
+"color: rgb(255, 0, 0);")
         self.bloodPresureError.setText("")
         self.bloodPresureError.setObjectName("bloodPresureError")
         self.skinThicknessError = QtWidgets.QLabel(self.tab)
@@ -582,7 +580,7 @@ class Ui_Diabete(object):
         font.setWeight(75)
         self.skinThicknessError.setFont(font)
         self.skinThicknessError.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-                                              "color: rgb(255, 0, 0);")
+"color: rgb(255, 0, 0);")
         self.skinThicknessError.setText("")
         self.skinThicknessError.setObjectName("skinThicknessError")
         self.ageError = QtWidgets.QLabel(self.tab)
@@ -594,7 +592,7 @@ class Ui_Diabete(object):
         font.setWeight(75)
         self.ageError.setFont(font)
         self.ageError.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-                                    "color: rgb(255, 0, 0);")
+"color: rgb(255, 0, 0);")
         self.ageError.setText("")
         self.ageError.setObjectName("ageError")
         self.diabetesPedigreeFunctionError = QtWidgets.QLabel(self.tab)
@@ -606,7 +604,7 @@ class Ui_Diabete(object):
         font.setWeight(75)
         self.diabetesPedigreeFunctionError.setFont(font)
         self.diabetesPedigreeFunctionError.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-                                                         "color: rgb(255, 0, 0);")
+"color: rgb(255, 0, 0);")
         self.diabetesPedigreeFunctionError.setText("")
         self.diabetesPedigreeFunctionError.setObjectName("diabetesPedigreeFunctionError")
         self.bmiError = QtWidgets.QLabel(self.tab)
@@ -618,7 +616,7 @@ class Ui_Diabete(object):
         font.setWeight(75)
         self.bmiError.setFont(font)
         self.bmiError.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-                                    "color: rgb(255, 0, 0);")
+"color: rgb(255, 0, 0);")
         self.bmiError.setText("")
         self.bmiError.setObjectName("bmiError")
         self.insulinError = QtWidgets.QLabel(self.tab)
@@ -630,7 +628,7 @@ class Ui_Diabete(object):
         font.setWeight(75)
         self.insulinError.setFont(font)
         self.insulinError.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-                                        "color: rgb(255, 0, 0);")
+"color: rgb(255, 0, 0);")
         self.insulinError.setText("")
         self.insulinError.setObjectName("insulinError")
         self.typeError = QtWidgets.QLabel(self.tab)
@@ -642,13 +640,36 @@ class Ui_Diabete(object):
         font.setWeight(75)
         self.typeError.setFont(font)
         self.typeError.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-                                     "color: rgb(255, 0, 0);")
+"color: rgb(255, 0, 0);")
         self.typeError.setText("")
         self.typeError.setObjectName("typeError")
+        self.MachineLearningLabel = QtWidgets.QLabel(self.tab)
+        self.MachineLearningLabel.setGeometry(QtCore.QRect(100, 530, 211, 31))
+        font = QtGui.QFont()
+        font.setFamily("Calibri")
+        font.setPointSize(16)
+        font.setBold(True)
+        font.setItalic(True)
+        font.setWeight(75)
+        self.MachineLearningLabel.setFont(font)
+        self.MachineLearningLabel.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"color: rgb(255, 0, 0);")
+        self.MachineLearningLabel.setObjectName("MachineLearningLabel")
+        self.DeepLearningLabel = QtWidgets.QLabel(self.tab)
+        self.DeepLearningLabel.setGeometry(QtCore.QRect(100, 570, 211, 31))
+        font = QtGui.QFont()
+        font.setFamily("Calibri")
+        font.setPointSize(18)
+        font.setBold(True)
+        font.setItalic(True)
+        font.setWeight(75)
+        self.DeepLearningLabel.setFont(font)
+        self.DeepLearningLabel.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"color: rgb(255, 0, 0);")
+        self.DeepLearningLabel.setObjectName("DeepLearningLabel")
         self.tabWidget.addTab(self.tab, "")
         self.tab_2 = QtWidgets.QWidget()
-        self.tab_2.setStyleSheet(
-            "background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(0, 0, 0, 255), stop:0.33 rgba(0, 0, 0, 255), stop:0.34 rgba(255, 30, 30, 255), stop:0.66 rgba(255, 0, 0, 255), stop:0.67 rgba(255, 255, 0, 255), stop:1 rgba(255, 255, 0, 255));")
+        self.tab_2.setStyleSheet("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(0, 0, 0, 255), stop:0.33 rgba(0, 0, 0, 255), stop:0.34 rgba(255, 30, 30, 255), stop:0.66 rgba(255, 0, 0, 255), stop:0.67 rgba(255, 255, 0, 255), stop:1 rgba(255, 255, 0, 255));")
         self.tab_2.setObjectName("tab_2")
         self.labelImport = QtWidgets.QLabel(self.tab_2)
         self.labelImport.setGeometry(QtCore.QRect(150, 240, 421, 51))
@@ -663,7 +684,6 @@ class Ui_Diabete(object):
         self.labelImport.setObjectName("labelImport")
         self.browse = QtWidgets.QPushButton(self.tab_2)
         self.browse.setGeometry(QtCore.QRect(590, 240, 241, 51))
-        self.browse.clicked.connect(self.getfiles)
         font = QtGui.QFont()
         font.setFamily("Calibri")
         font.setPointSize(20)
@@ -699,11 +719,10 @@ class Ui_Diabete(object):
         font.setWeight(75)
         self.typeError2.setFont(font)
         self.typeError2.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-                                      "color: rgb(255, 0, 0);")
+"color: rgb(255, 0, 0);")
         self.typeError2.setText("")
         self.typeError2.setObjectName("typeError2")
         self.predict2 = QtWidgets.QPushButton(self.tab_2)
-        self.predict2.clicked.connect(self.clickPredictXLSX)
         self.predict2.setGeometry(QtCore.QRect(240, 440, 461, 61))
         font = QtGui.QFont()
         font.setFamily("Calibri")
@@ -716,13 +735,23 @@ class Ui_Diabete(object):
         self.statusPrediction = QtWidgets.QLabel(self.tab_2)
         self.statusPrediction.setGeometry(QtCore.QRect(240, 530, 461, 31))
         self.statusPrediction.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-                                            "color: rgb(255, 0, 0);")
+"color: rgb(255, 0, 0);")
         self.statusPrediction.setText("")
         self.statusPrediction.setObjectName("statusPrediction")
         self.tabWidget.addTab(self.tab_2, "")
+        self.label_2 = QtWidgets.QLabel(self.centralwidget)
+        self.label_2.setGeometry(QtCore.QRect(1080, 10, 0, 13))
+        self.label_2.setStyleSheet("background-image: url(images/imageslogo.jpg);")
+        self.label_2.setText("")
+        self.label_2.setObjectName("label_2")
+        self.label_3 = QtWidgets.QLabel(self.centralwidget)
+        self.label_3.setGeometry(QtCore.QRect(680, 10, 371, 161))
+        self.label_3.setStyleSheet("image: url(images/imageslogo.jpg);")
+        self.label_3.setText("")
+        self.label_3.setObjectName("label_3")
         Diabete.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(Diabete)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 1098, 21))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 1089, 21))
         self.menubar.setObjectName("menubar")
         Diabete.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(Diabete)
@@ -730,8 +759,10 @@ class Ui_Diabete(object):
         Diabete.setStatusBar(self.statusbar)
 
         self.retranslateUi(Diabete)
-        self.tabWidget.setCurrentIndex(1)
+        self.tabWidget.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(Diabete)
+        self.predict2.clicked.connect(self.clickPredictXLSX)
+        self.browse.clicked.connect(self.getfiles)
 
     def retranslateUi(self, Diabete):
         _translate = QtCore.QCoreApplication.translate
@@ -747,8 +778,10 @@ class Ui_Diabete(object):
         self.bmiLabel.setText(_translate("Diabete", "BMI"))
         self.diabetesPedigreeFunctionLabel.setText(_translate("Diabete", "Diabetes Pedigree Function"))
         self.ageLabel.setText(_translate("Diabete", "Age"))
+        self.MachineLearningLabel.setText(_translate("Diabete", "Machine Learning"))
+        self.DeepLearningLabel.setText(_translate("Diabete", "Deep learning"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), _translate("Diabete", "Tab 1"))
-        self.labelImport.setText(_translate("Diabete", ""))
+        self.labelImport.setText(_translate("Diabete", "TextLabel"))
         self.browse.setText(_translate("Diabete", "Browse"))
         self.deepLearningBrowse.setText(_translate("Diabete", "Deep Learning"))
         self.machineLearningImport.setText(_translate("Diabete", "Machine Learning"))

@@ -26,6 +26,9 @@ if __name__ == '__main__':
             commandOk = True
         elif commandImport and argument == "-m":
             commandOk = True
+    if commandOk == False and graphiqueOK == False:
+        graphiqueOK = True
+        commandOk = False
     if commandOk:
         if commandImport:
             pass
