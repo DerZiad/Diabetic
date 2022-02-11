@@ -20,19 +20,10 @@ if __name__ == '__main__':
         elif argument == "-g":
             graphiqueOK = True
             commandOk = False
-        elif argument == "--import":
-            commandImport = True
-        elif commandImport and argument == "-d":
-            commandOk = True
-        elif commandImport and argument == "-m":
-            commandOk = True
     if commandOk == False and graphiqueOK == False:
         graphiqueOK = True
         commandOk = False
     if commandOk:
-        if commandImport:
-            pass
-        else:
             commandRunner = CommandLiner(models,wr)
             commandRunner.run()
     elif graphiqueOK:
@@ -41,6 +32,4 @@ if __name__ == '__main__':
         os.system("cls")
         wr.writeError("python " + args[0] + "-c ou -g")
         wr.writeError("[Options] = -c for command liner and -g for graphique launch")
-        wr.writeError("python " + args[0] + " --import [file.xlsx] -d ou -m")
-        wr.writeError("[Options] = -d for deep learning and -m for machine learning")
         exit(2)
