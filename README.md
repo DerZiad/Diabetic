@@ -2,6 +2,15 @@
 In the context of my 5th semester in Morocco, the university proposed an artificial intelligence project to us, aimed at assisting us in the field. The project involves creating machine learning and deep learning models to classify patients as either diabetic or non-diabetic, and making decisions to select the best model among several options.
 # Functionalities
 To use this application professionally, they have requested that we deploy the executable version of the application which can take data manually or via an Excel file, and process the data to predict whether one or more patients are diabetic. In this application, the prediction is made by two models that have achieved higher accuracy and avoided significant overfitting.
+
+# Technologies
+- PyQT5
+- Tensorflow
+- Sklearn
+- Pandas
+- Pickle
+- Colorama
+
 # Models
 - Machine Learning :
     - Random Forest Classifier
