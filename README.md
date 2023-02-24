@@ -54,4 +54,6 @@ We can notice here that the RandomForest and the DeepLearning are making the bes
 # IPYNB File
 - [Download Data Visualisation ipynb](DataVisualisation.ipynb)
 - [Deployed Application](Application)
-
+- [Download Word Report](report/report.docx)
+- [Download Power Point Report](report/report.ppt)
+- [Download PDF Report](report/report.pdf)
