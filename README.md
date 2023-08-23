@@ -1,59 +1,66 @@
-# Classification of diabetic patients
-In the context of my 5th semester in Morocco, the university proposed an artificial intelligence project to us, aimed at assisting us in the field. The project involves creating machine learning and deep learning models to classify patients as either diabetic or non-diabetic, and making decisions to select the best model among several options.
-# Functionalities
-To use this application professionally, they have requested that we deploy the executable version of the application which can take data manually or via an Excel file, and process the data to predict whether one or more patients are diabetic. In this application, the prediction is made by two models that have achieved higher accuracy and avoided significant overfitting.
+# Diabetic Patients Classification Project
 
-# Technologies
-- PyQT5
-- Tensorflow
-- Sklearn
-- Pandas
-- Pickle
-- Colorama
+In the context of my fifth semester in Morocco, our university presented an engaging artificial intelligence project designed to provide practical insights into the field. This project focuses on the creation of machine learning and deep learning models for the purpose of classifying patients as either diabetic or non-diabetic. The primary challenge involves identifying the most effective model among various options, thus facilitating informed decision-making.
 
-# Models
-- Machine Learning :
+## Core Functionalities
+
+To cater to professional utilization, our task entails deploying an executable version of the application. This version allows for manual data entry or data import from an Excel file. Once the data is processed, the application predicts the likelihood of one or more patients being diabetic. This prediction is executed through two models renowned for their enhanced accuracy and ability to mitigate significant overfitting.
+
+## Utilized Technologies
+
+To achieve these objectives, the project has harnessed a selection of advanced technologies:
+
+- **PyQT5**: For developing the application's user interface.
+- **Tensorflow**: Empowering the implementation of deep learning models.
+- **Scikit-learn (Sklearn)**: Facilitating machine learning model development and evaluation.
+- **Pandas**: For data manipulation and analysis.
+- **Pickle**: Enabling model serialization and deserialization.
+- **Colorama**: Enhancing the visual presentation of command-line outputs.
+
+## Model Lineup
+
+The project capitalizes on a variety of models to achieve accurate classification:
+
+- **Machine Learning Models**:
     - Random Forest Classifier
     - Support Vector Machine
     - Logistic Regression
-    - KNN Classifier
-- Deep Learning
+    - K-Nearest Neighbors (KNN) Classifier
 
-# Optimisation
-For proper optimization, we had to scale the data and use K-fold cross-validation techniques.
+- **Deep Learning Model**.
 
-# Data Visualization
-To gain a deeper understanding of the data, please follow this 
+## Optimization Approach
 
+In pursuit of optimal model performance, we implemented two key strategies:
 
-### Sample Data
-This image shows a sample of the data:
-![Data Visualization](images/data.png)
+- Data Scaling: Ensuring consistent data range for effective model training.
+- K-Fold Cross-Validation: Employing this technique to enhance model validation and selection.
 
-### Data Dispersion
-This image shows the dispersion of the data:
-![Data Dispersion](images/dataDispersion.png)
+## Data Visualization
 
+To deepen our comprehension of the data, we present visualizations that offer valuable insights:
 
-### Data Features
-This image shows the features of the data:
-![Features](images/dataFeatures.png)
+- **Sample Data Visualization**: Providing an illustrative snapshot of the data.
+  ![Data Visualization](images/data.png)
+- **Data Dispersion Visualization**: Displaying the distribution and patterns within the data.
+  ![Data Dispersion](images/dataDispersion.png)
+- **Data Features Visualization**: Highlighting the various features of the data.
+  ![Features](images/dataFeatures.png)
+- **Deep Learning Model Dense Layer**: Offering a visualization of the deep learning model's dense layer.
+  ![Deep Learning](images/denselayer.png)
+- **Deep Learning Loss Function and Estimation**: Illustrating the loss function and estimation process for the deep learning model.
+  ![Deep Learning Loss](images/deeplearningloss.png)
+- **ROC Curve for Decision-Making**: Utilizing the ROC curve to aid in model selection.
+  ![ROC curve](images/roc.png)
 
-### Deep Learning Model Dense Layer
-This image shows the dense layer of the deep learning model:
-![Deep Learning](images/denselayer.png)
+## Additional Resources
 
-### Deep Learning Loss Function and Estimation
-This image shows the loss function and estimation of the deep learning model:
-![Deep Learning Loss](images/deeplearningloss.png)
+For a more detailed exploration, we offer the following resources:
 
-### ROC Curve Used for Decision-Making
-![ROC curve](images/roc.png)
-We can notice here that the RandomForest and the DeepLearning are making the best approximation
-
-# IPYNB File
-- [Download Data Visualisation ipynb](DataVisualisation.ipynb)
-- [Deployed Application](Application)
+- [Download Data Visualization Notebook](DataVisualisation.ipynb)
+- [Access Deployed Application](Application)
 - [Download Word Report](report/report.docx)
-- [Download Power Point Report](report/report.ppt)
+- [Download PowerPoint Report](report/report.ppt)
 - [Download PDF Report](report/report.pdf)
+
+Through this project, we've not only engaged with advanced technologies but also gained practical insights into the pivotal role of AI in healthcare decision-making.
